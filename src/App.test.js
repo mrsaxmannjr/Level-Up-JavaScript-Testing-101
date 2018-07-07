@@ -1,4 +1,4 @@
-import { hello, add } from './App';
+import { hello, add, removeSNames } from './App';
 
 describe('hello', () => {
   it('should output hello', () => {
@@ -22,5 +22,23 @@ describe('add', () => {
   });
   it('should not add arrays', () => {
     expect(add(2, [])).toBe(null);
+  });
+});
+
+describe('removeSNames', () => {
+  it('should remove all S names', () => {
+    const names = ['Scott', 'Jack', 'Steve'];
+    expect(removeSNames(names)).not.toContain('Scott');
+    expect(removeSNames(names)).not.toContain('Steve');
+  });
+  it('should not remove other names', () => {
+    const names = ['James', 'Scott', 'Jack'];
+    expect(removeSNames(names)).toContain('Jack');
+    expect(removeSNames(names)).toContain('James');
+  });
+  it('should account for case', () => {
+    const names = ['James', 'Scott', 'Jack', 'scott'];
+    expect(removeSNames(names)).not.toContain('Scott')
+    expect(removeSNames(names)).not.toContain('scott')
   });
 });

@@ -5,4 +5,8 @@ export const add = (x, y) => {
     return null;
   }
   return x + y;
-}
+};
+
+export const removeSNames = (nameArray) => {
+  return nameArray.filter(name => name.toLowerCase().charAt(0) !== 's');
+};
