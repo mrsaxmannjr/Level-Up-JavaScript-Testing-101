@@ -1,4 +1,4 @@
-import { hello, add, removeSNames } from './App';
+import { hello, add, removeSNames, filterNames } from './App';
 
 describe('hello', () => {
   it('should output hello', () => {
@@ -25,6 +25,13 @@ describe('add', () => {
   });
 });
 
+describe('filterNames', () => {
+  it('should return James', () => {
+    const names = ['James', 'Scott', 'Jack', 'james'];
+    expect(filterNames(names)).toContain('James');
+    expect(filterNames(names)).not.toContain('BJ');
+  });
+});
 describe('removeSNames', () => {
   it('should remove all S names', () => {
     const names = ['Scott', 'Jack', 'Steve'];

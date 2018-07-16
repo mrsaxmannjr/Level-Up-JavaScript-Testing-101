@@ -7,6 +7,6 @@ export const add = (x, y) => {
   return x + y;
 };
 
-export const removeSNames = (nameArray) => {
-  return nameArray.filter(name => name.toLowerCase().charAt(0) !== 's');
-};
+export const removeSNames = (nameArray) => nameArray.filter(name => name.toLowerCase().charAt(0) !== 's');
+
+export const filterNames = (nameArray) => nameArray.filter(name => name.toLowerCase() === 'james');
